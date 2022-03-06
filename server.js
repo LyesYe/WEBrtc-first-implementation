@@ -3,6 +3,8 @@ const app = express()
 const server = require('http').Server(app) //create a server and allow it to be used with socket.io
 const io = require('socket.io')(server) // create a server based on express server , and pass it to socket io so that socket io knows which server
 const { v4: uuidV4 } = require('uuid') //uuidV4 creates a random unique id
+const port = process.env. PORT || 3000 
+
 
 
 
@@ -36,4 +38,4 @@ io.on('connection',socket => {
     });
 } );
 
-server.listen(3000)
+server.listen(port)
